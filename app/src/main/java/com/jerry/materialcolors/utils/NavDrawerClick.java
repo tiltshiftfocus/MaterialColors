@@ -1,17 +1,17 @@
 package com.jerry.materialcolors.utils;
 
 import android.app.Activity;
+
+import android.app.FragmentManager;
 import android.content.Context;
-import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.jerry.materialcolors.DrawerActivity;
+import com.jerry.materialcolors.R;
+import com.jerry.materialcolors.fragments.BlankFragment2;
 
-/**
- * Created by zm on 13/12/2014.
- */
 public class NavDrawerClick implements ListView.OnItemClickListener {
 
     private Context context;
@@ -24,17 +24,9 @@ public class NavDrawerClick implements ListView.OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        goToNavDrawerItem(position);
+        selectItem(position);
     }
 
-    private void goToNavDrawerItem(int item){
-        Intent intent;
-        switch(item){
-            case 0:
-                intent = new Intent(context, DrawerActivity.class);
-                context.startActivity(intent);
-                act1.finish();
-                break;
-        }
+    private void selectItem(int position){
     }
 }

@@ -103,7 +103,7 @@ public class NavigationDrawerFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.items_list, array1);
         lv1 = (ListView) getActivity().findViewById(R.id.navdrawer_listview1);
         lv1.setAdapter(adapter);
-        lv1.setOnItemClickListener(new NavDrawerClick(getActivity(),getActivity()));
+        //lv1.setOnItemClickListener(new NavDrawerClick(getActivity(),getActivity()));
 
     }
 

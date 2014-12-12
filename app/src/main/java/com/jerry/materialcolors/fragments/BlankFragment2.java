@@ -1,8 +1,8 @@
 package com.jerry.materialcolors.fragments;
 
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +10,6 @@ import android.view.ViewGroup;
 import com.jerry.materialcolors.R;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class BlankFragment2 extends Fragment {
 
 
