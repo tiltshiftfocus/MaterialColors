@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -103,8 +105,40 @@ public class NavigationDrawerFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.items_list, array1);
         lv1 = (ListView) getActivity().findViewById(R.id.navdrawer_listview1);
         lv1.setAdapter(adapter);
-        //lv1.setOnItemClickListener(new NavDrawerClick(getActivity(),getActivity()));
 
+        //lv1.setOnItemClickListener(new NavDrawerClick(array1,getActivity(),getActivity()));
+
+        lv1.setOnItemClickListener(new DrawerItemClickListener());
+
+
+    }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            selectItem(position);
+        }
+    }
+
+    private void selectItem(int position) {
+        // update the main content by replacing fragments
+        Fragment fragment = new BlankFragment();
+        switch(position){
+            case 0:
+                fragment = new BlankFragment();
+                break;
+            case 1:
+                fragment = new BlankFragment2();
+                break;
+        }
+
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.drawer_relativelayout, fragment).commit();
+
+        // update selected item and title, then close the drawer
+        lv1.setItemChecked(position, true);
+        //setTitle(mPlanetTitles[position]);
+        mDrawerLayout.closeDrawer(containerView);
     }
 
     public static void saveToPref(Context ctx, String settingName, String settingValue) {
