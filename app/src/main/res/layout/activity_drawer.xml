@@ -30,7 +30,7 @@
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_gravity="start"
         app:layout="@layout/fragment_navigation_drawer"
-        android:name="com.jerry.materialcolors.com.jerry.materialcolors.fragments.NavigationDrawerFragment"
+        android:name="com.jerry.materialcolors.fragments.NavigationDrawerFragment"
         tools:layout="@layout/fragment_navigation_drawer"></fragment>
 
 </android.support.v4.widget.DrawerLayout>

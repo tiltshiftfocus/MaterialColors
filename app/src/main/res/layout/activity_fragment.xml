@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_weight="2"
-        android:name="com.jerry.materialcolors.com.jerry.materialcolors.fragments.BlankFragment"
+        android:name="com.jerry.materialcolors.fragments.BlankFragment"
         tools:layout="@layout/fragment_blank"></fragment>
 
     <fragment
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_weight="2"
-        android:name="com.jerry.materialcolors.com.jerry.materialcolors.fragments.BlankFragment2"
+        android:name="com.jerry.materialcolors.fragments.BlankFragment2"
         tools:layout="@layout/fragment_blank_fragment2" />
 
 </LinearLayout>

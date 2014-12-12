@@ -9,11 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.jerry.materialcolors.com.jerry.materialcolors.fragments.NavigationDrawerFragment;
-
-
-
-import java.util.Map;
+import com.jerry.materialcolors.fragments.NavigationDrawerFragment;
 
 
 public class DrawerActivity extends ActionBarActivity {

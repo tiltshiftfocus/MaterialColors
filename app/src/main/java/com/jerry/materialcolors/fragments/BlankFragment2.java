@@ -1,4 +1,4 @@
-package com.jerry.materialcolors.com.jerry.materialcolors.fragments;
+package com.jerry.materialcolors.fragments;
 
 
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import com.jerry.materialcolors.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment extends Fragment {
+public class BlankFragment2 extends Fragment {
 
 
-    public BlankFragment() {
+    public BlankFragment2() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+        return inflater.inflate(R.layout.fragment_blank_fragment2, container, false);
     }
 
 

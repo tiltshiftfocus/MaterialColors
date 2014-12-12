@@ -1,4 +1,4 @@
-package com.jerry.materialcolors.com.jerry.materialcolors.utils;
+package com.jerry.materialcolors.utils;
 
 import android.app.Activity;
 import android.content.Context;
