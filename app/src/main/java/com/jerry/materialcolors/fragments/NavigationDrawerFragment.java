@@ -122,12 +122,15 @@ public class NavigationDrawerFragment extends Fragment {
 
     private void selectItem(int position) {
         // update the main content by replacing fragments
-        Fragment fragment = new BlankFragment();
+        Fragment fragment = new DefaultFragment();
         switch(position){
             case 0:
-                fragment = new BlankFragment();
+                fragment = new DefaultFragment();
                 break;
             case 1:
+                fragment = new BlankFragment();
+                break;
+            case 2:
                 fragment = new BlankFragment2();
                 break;
         }
