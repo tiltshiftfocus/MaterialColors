@@ -1,0 +1,36 @@
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base"></style>
+
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/toolBarColorRed</item>
+        <item name="colorPrimaryDark">@color/statusBarColorRed</item>
+        <item name="colorAccent">@color/accentColorRed</item>
+    </style>
+
+    <style name="AppTheme_Pink" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/toolBarColorPink</item>
+        <item name="colorPrimaryDark">@color/statusBarColorPink</item>
+        <item name="colorAccent">@color/accentColorPink</item>
+    </style>
+
+    <style name="AppTheme_Purple" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/toolBarColorPurple</item>
+        <item name="colorPrimaryDark">@color/statusBarColorPurple</item>
+        <item name="colorAccent">@color/accentColorPurple</item>
+    </style>
+
+    <style name="AppTheme_DPurple" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/toolBarColorDPurple</item>
+        <item name="colorPrimaryDark">@color/statusBarColorDPurple</item>
+        <item name="colorAccent">@color/accentColorDPurple</item>
+    </style>
+
+    <style name="AppTheme_Indigo" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/toolBarColorIndigo</item>
+        <item name="colorPrimaryDark">@color/statusBarColorIndigo</item>
+        <item name="colorAccent">@color/accentColorIndigo</item>
+    </style>
+
+</resources>
