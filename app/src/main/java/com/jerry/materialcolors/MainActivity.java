@@ -163,4 +163,9 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         Intent i = new Intent(MainActivity.this, DrawerActivity.class);
         startActivity(i);
     }
+
+    public void openCardListView(View v){
+        Intent i = new Intent(MainActivity.this, CardRecyclerView.class);
+        startActivity(i);
+    }
 }

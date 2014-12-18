@@ -40,8 +40,11 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".DrawerActivity2"
-            android:label="@string/title_activity_drawer_activity2" >
+            android:name=".CardRecyclerView"
+            android:label="@string/title_activity_card_recycler_view" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
     </application>
 

@@ -38,5 +38,7 @@
     <string name="navdrawer_instr">Click on the hamburger menu or swipe left to start</string>
     <string name="title_activity_drawer_activity2">DrawerActivity2</string>
     <string name="drawer_act2">This is DrawerActivity2</string>
+    <string name="title_activity_card_recycler_view">CardRecyclerView</string>
+    <string name="card_recycler">Card Recycler View</string>
 
 </resources>
