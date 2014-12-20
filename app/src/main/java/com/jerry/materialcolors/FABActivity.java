@@ -1,6 +1,5 @@
 package com.jerry.materialcolors;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v4.app.NavUtils;
@@ -9,24 +8,17 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.jerry.materialcolors.utils.FABClickListener;
 import com.melnykov.fab.FloatingActionButton;
-
-import java.util.ArrayList;
-
-import it.gmariotti.cardslib.library.internal.Card;
-import it.gmariotti.cardslib.library.internal.CardArrayAdapter;
-import it.gmariotti.cardslib.library.view.CardListView;
 
 
 public class FABActivity extends ActionBarActivity {
     private String PACKAGE_NAME;
 
-    private String[] foodArray = {"Chicken", "Fries", "Ice Cream", "Turkey", "Ham", "Poultry", "Biscuit", "Bread"};
+    private String[] foodArray;
     private Toolbar toolbar;
 
     @Override
@@ -40,6 +32,7 @@ public class FABActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        foodArray = getApplicationContext().getResources().getStringArray(R.array.food);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.items_list, foodArray);
 
 

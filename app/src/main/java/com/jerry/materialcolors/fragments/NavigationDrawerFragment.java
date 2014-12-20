@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -70,7 +71,7 @@ public class NavigationDrawerFragment extends Fragment {
                     saveToPref(getActivity(), KEY_USER_LEARNED_DRAWER, mUserLearned + "");
                 }
                 getActivity().invalidateOptionsMenu();
-                getActivity().setTitle("TEST");
+                getActivity().setTitle(getText(R.string.title_activity_drawer));
 
             }
 
@@ -78,7 +79,7 @@ public class NavigationDrawerFragment extends Fragment {
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
                 getActivity().invalidateOptionsMenu();
-                getActivity().setTitle(getText(R.string.title_activity_drawer));
+                //getActivity().setTitle(getText(R.string.title_activity_drawer));
             }
 
         };
@@ -105,12 +106,8 @@ public class NavigationDrawerFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.items_list, array1);
         lv1 = (ListView) getActivity().findViewById(R.id.navdrawer_listview1);
         lv1.setAdapter(adapter);
-
-        //lv1.setOnItemClickListener(new NavDrawerClick(array1,getActivity(),getActivity()));
-
+        lv1.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
         lv1.setOnItemClickListener(new DrawerItemClickListener());
-
-
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
@@ -141,6 +138,7 @@ public class NavigationDrawerFragment extends Fragment {
         // update selected item and title, then close the drawer
         lv1.setItemChecked(position, true);
         //setTitle(mPlanetTitles[position]);
+        getActivity().setTitle(array1[lv1.getCheckedItemPosition()]);
         mDrawerLayout.closeDrawer(containerView);
     }
 

@@ -46,10 +46,24 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodHolder> {
         notifyItemInserted(position);
     }
 
+    public void setList(List<Food> foodList){
+        this.foodList = foodList;
+    }
+
     public void remove(Food item) {
         int position = foodList.indexOf(item);
         foodList.remove(position);
         notifyItemRemoved(position);
+    }
+
+    public void clearApplications() {
+        int size = this.foodList.size();
+        if (size > 0) {
+            for (int i = 0; i < size; i++) {
+                foodList.remove(0);
+            }
+            this.notifyItemRangeRemoved(0, size);
+        }
     }
 
     public class FoodHolder extends RecyclerView.ViewHolder {
