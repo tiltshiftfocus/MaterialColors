@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="com.jerry.materialcolors.fragments.AddFoodFragment">
+
+    <EditText
+        android:id="@+id/food_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name_food"
+        android:singleLine="true"/>
+
+    <EditText
+        android:id="@+id/fooddesc_edittext"
+        android:layout_below="@id/food_edittext"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:hint="@string/food_desc"
+        android:ems="10"/>
+
+    <Button
+        android:id="@+id/dialog_ok_button"
+        android:layout_below="@id/fooddesc_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:text="OK"/>
+
+    <Button
+        android:id="@+id/dialog_cancel_button"
+        android:layout_below="@id/fooddesc_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/dialog_ok_button"
+        android:layout_marginTop="8dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:text="Cancel"/>
+
+</RelativeLayout>

@@ -1,6 +1,5 @@
 package com.jerry.materialcolors.fragments;
 
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.jerry.materialcolors.R;
-import com.jerry.materialcolors.utils.NavDrawerClick;
 
 public class NavigationDrawerFragment extends Fragment {
 

@@ -1,5 +1,6 @@
 package com.jerry.materialcolors;
 
+import android.support.v4.app.DialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.jerry.materialcolors.adapter.FoodAdapter;
+import com.jerry.materialcolors.fragments.AddFoodFragment;
 import com.jerry.materialcolors.utils.Food;
 import com.melnykov.fab.FloatingActionButton;
 
@@ -20,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class CardRecyclerView extends ActionBarActivity {
+public class CardRecyclerView extends ActionBarActivity implements AddFoodFragment.EditNameDialogListener {
 
     private String PACKAGE_NAME;
 
@@ -41,29 +43,38 @@ public class CardRecyclerView extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        // Init list with food
         List<Food> foodList = new ArrayList();
         initFoodList(foodList);
 
+        // Init RecyclerView
         mList = (RecyclerView) findViewById(R.id.recycler_view);
         mList.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         mList.setLayoutManager(llm);
 
+        // Set Adapter
         mAdapter = new FoodAdapter(foodList);
         mList.setAdapter(mAdapter);
 
+        // Init Floating Action Button
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.attachToRecyclerView(mList);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Food thisisFood = new Food("testFood", "Sorry, this is inedible food.");
-                mAdapter.add(thisisFood, mAdapter.getItemCount());
+                //Food thisisFood = new Food("testFood", "Sorry, this is inedible food.");
+                //mAdapter.add(thisisFood, mAdapter.getItemCount());
+                DialogFragment addFood = new AddFoodFragment();
+                //addFood.setTargetFragment(addFood,RESULT_FROM_DIALOG);
+                addFood.show(getSupportFragmentManager(), "addFood");
+
+
             }
         });
 
+        // Init Swipe Layout
         mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_layout);
         mSwipeLayout.setColorSchemeColors(getResources().getColor(R.color.accent));
         mSwipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -72,7 +83,6 @@ public class CardRecyclerView extends ActionBarActivity {
                 new InitTask().execute();
             }
         });
-
 
     }
 
@@ -109,6 +119,15 @@ public class CardRecyclerView extends ActionBarActivity {
                 break;
             default:
                 break;
+        }
+    }
+
+    @Override
+    public void onFinishEditDialog(String inputText, String inputText2) {
+        if(!inputText.isEmpty() && !inputText2.isEmpty()) {
+            mAdapter.add(new Food(inputText, inputText2), mAdapter.getItemCount());
+        }else{
+            Toast.makeText(this,"Hey, it's empty!",Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -33,10 +33,11 @@
     <string name="title_activity_drawer">DrawerActivity</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
-    <string name="by_author">BY JERRY LIM</string>
     <string name="author">JERRY</string>
     <string name="navdrawer_instr">Click on the hamburger menu or swipe left to start</string>
     <string name="title_activity_card_recycler_view">CardRecyclerView</string>
     <string name="card_recycler">Card Recycler View</string>
+    <string name="name_food">Name of Food</string>
+    <string name="food_desc">Description</string>
 
 </resources>
