@@ -97,4 +97,14 @@
         android:onClick="openCardListView"
         android:text="@string/card_recycler"/>
 
+    <Button
+        android:id="@+id/button7"
+        android:layout_below="@id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:onClick="openViewPager"
+        android:text="@string/view_pager_act"/>
+
 </RelativeLayout>

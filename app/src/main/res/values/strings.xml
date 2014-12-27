@@ -39,5 +39,7 @@
     <string name="card_recycler">Card Recycler View</string>
     <string name="name_food">Name of Food</string>
     <string name="food_desc">Description</string>
+    <string name="title_activity_view_pager">ViewPagerActivity</string>
+    <string name="view_pager_act">View Pager</string>
 
 </resources>
