@@ -13,26 +13,13 @@ import com.jerry.materialcolors.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyPageFragment extends Fragment {
-
+public class PagerFragment extends Fragment {
 
     public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
 
-    public static final MyPageFragment newInstance(String message) {
-        MyPageFragment f = new MyPageFragment();
-        Bundle bdl = new Bundle(1);
-        bdl.putString(EXTRA_MESSAGE, message);
-        f.setArguments(bdl);
-        return f;
-    }
-
-
-
-
-    public MyPageFragment() {
+    public PagerFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,6 +30,14 @@ public class MyPageFragment extends Fragment {
         messageTextView.setText(message);
 
         return v;
+    }
+
+    public static final PagerFragment newInstance(String message) {
+        PagerFragment f = new PagerFragment();
+        Bundle bdl = new Bundle(1);
+        bdl.putString(EXTRA_MESSAGE, message);
+        f.setArguments(bdl);
+        return f;
     }
 
 

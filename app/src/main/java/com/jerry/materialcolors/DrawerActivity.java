@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.jerry.materialcolors.fragments.NavigationDrawerFragment;
 
@@ -16,6 +18,7 @@ public class DrawerActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
     private String PACKAGE_NAME;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,23 +65,18 @@ public class DrawerActivity extends ActionBarActivity {
 
         switch (pref.getInt("theme", 0)) {
             case 0:
-                System.out.println(pref.getInt("theme", 0));
                 setTheme(R.style.AppTheme);
                 break;
             case 1:
-                System.out.println(pref.getInt("theme", 0));
                 setTheme(R.style.AppTheme_Pink);
                 break;
             case 2:
-                System.out.println(pref.getInt("theme", 0));
                 setTheme(R.style.AppTheme_Purple);
                 break;
             case 3:
-                System.out.println(pref.getInt("theme", 0));
                 setTheme(R.style.AppTheme_DPurple);
                 break;
             case 4:
-                System.out.println(pref.getInt("theme", 0));
                 setTheme(R.style.AppTheme_Indigo);
                 break;
             default:

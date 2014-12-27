@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.jerry.materialcolors.R;
 
@@ -32,6 +34,9 @@ public class NavigationDrawerFragment extends Fragment {
 
     private String[] array1;
     private ListView lv1;
+    private TextView goBackTV;
+    private TextView mInstr;
+    private boolean instrLearned = false;
 
     public NavigationDrawerFragment() {
         // Required empty public constructor
@@ -102,16 +107,31 @@ public class NavigationDrawerFragment extends Fragment {
 
         array1 = getActivity().getResources().getStringArray(R.array.food);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.items_list, array1);
-        lv1 = (ListView) getActivity().findViewById(R.id.navdrawer_listview1);
+        lv1 = (ListView) containerView.findViewById(R.id.navdrawer_listview1);
         lv1.setAdapter(adapter);
         lv1.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
         lv1.setOnItemClickListener(new DrawerItemClickListener());
+
+        goBackTV = (TextView) containerView.findViewById(R.id.navdrawer_textview1);
+        goBackTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
+        mInstr = (TextView) getActivity().findViewById(R.id.drawer_instr_text);
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             selectItem(position);
+            if(!instrLearned){
+                instrLearned = true;
+                mInstr.setVisibility(View.GONE);
+                Log.d("TEST","VISIBILITY TEST");
+            }
+
         }
     }
 

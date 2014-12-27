@@ -49,23 +49,18 @@ public class FABActivity extends ActionBarActivity {
 
         switch (pref.getInt("theme", 0)) {
             case 0:
-                System.out.println(pref.getInt("theme", 0));
                 setTheme(R.style.AppTheme);
                 break;
             case 1:
-                System.out.println(pref.getInt("theme", 0));
                 setTheme(R.style.AppTheme_Pink);
                 break;
             case 2:
-                System.out.println(pref.getInt("theme", 0));
                 setTheme(R.style.AppTheme_Purple);
                 break;
             case 3:
-                System.out.println(pref.getInt("theme", 0));
                 setTheme(R.style.AppTheme_DPurple);
                 break;
             case 4:
-                System.out.println(pref.getInt("theme", 0));
                 setTheme(R.style.AppTheme_Indigo);
                 break;
             default:
